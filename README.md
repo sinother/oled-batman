@@ -11,7 +11,7 @@ Proyecto para mostrar información en una pantalla OLED SSD1306 (128x64 píxeles
   - Pillow
 
 Instala dependencias con:
-
+```bash
 pip install -r requirements.txt
 
 ### 🔌 Conexión de Pines (Raspberry Pi 1 B ↔ OLED SSD1306)
