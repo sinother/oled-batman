@@ -2,7 +2,7 @@ import board
 import busio
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_ssd1306
-
+import time
 # --- CONFIGURACIÓN DE LA PANTALLA ---
 # Asegúrate de que las dimensiones (WIDTH y HEIGHT) coincidan con tu pantalla
 WIDTH = 128
@@ -136,6 +136,15 @@ except KeyboardInterrupt:
     oled.fill(0)
     oled.show()
     print("\nPrograma terminado. Pantalla limpiada.")
+print("Servicio OLED activo. Manteniendo imagen de Batman...")
+while True:
+    try:
+        time.sleep(3600)  # Esperar 1 hora
+    except Exception as e:
+        error_msg = f"{time.ctime()}: ERROR - {str(e)}\n"
+        print(error_msg)
+        with open('/home/sinother/oled_error.log', 'a') as f:
+            f.write(error_msg)
 
 
 
